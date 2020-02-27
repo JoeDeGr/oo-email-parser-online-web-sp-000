@@ -9,9 +9,10 @@ class EmailAddressParser
 
   def parse
     parsed = []
-    @email_addresses.split(/[\s,]+/).each do |m|
-      parsed << m if !parsed.include?(m)
-    end
-    parsed
+    @email_addresses.split(/[\s,]+/).uniq
+    # @email_addresses.split(/[\s,]+/).each do |m|
+    #   parsed << m if !parsed.include?(m)
+    # end
+    # parsed
   end
 end
